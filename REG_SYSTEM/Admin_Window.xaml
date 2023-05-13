@@ -1,0 +1,157 @@
+﻿<Window x:Class="REG_SYSTEM.Admin_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:REG_SYSTEM"
+        mc:Ignorable="d"
+        Title="Admin_Window" Height="450" Width="800"
+         WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+
+
+    <Border CornerRadius="60">
+
+        <Border 
+        CornerRadius="50"
+        BorderThickness="8"
+        Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#6b0e40" Offset="0"/>
+                    <GradientStop Color="#2e041a" Offset="0.75"/>
+                    <GradientStop Color="#6b0e40" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#6b0e40" Offset="0"/>
+                    <GradientStop Color="#ab5483" Offset="0.25"/>
+                    <GradientStop Color="#6b0e40" Offset="0.55"/>
+                    <GradientStop Color="#ab5483" Offset="0.95"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock Text="Admin Window"
+                               Foreground="#39313b"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               FontFamily="montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="35,10,10,0"/>
+
+                    <Button x:Name="btnminimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="DarkGray"
+                            FontSize="16"
+                            FontFamily="montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnminimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#39313b"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#6c5173"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                            
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="DarkGray"
+                            FontSize="13"
+                            FontFamily="montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#39313b"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#6c5173"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                </Grid>
+
+
+
+
+
+
+
+
+
+
+            </Grid>
+
+
+
+
+        </Border>
+    </Border>
+</Window>
+
+   

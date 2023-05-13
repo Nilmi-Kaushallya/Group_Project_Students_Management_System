@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\images %28111%29.jpeg" />
+    <None Remove="Images\images %283%29.jpeg" />
+    <None Remove="Images\images %283%29.png" />
+    <None Remove="Images\images %285%29.jpeg" />
+    <None Remove="Images\images.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\images (111).jpeg" />
+    <Resource Include="Images\images (3).jpeg" />
+    <Resource Include="Images\images (3).png" />
+    <Resource Include="Images\images (5).jpeg" />
+    <Resource Include="Images\images.jpg" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,244 @@
+﻿<Window x:Class="REG_SYSTEM.Student_Registration_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:REG_SYSTEM"
+        mc:Ignorable="d"
+        Title="Student_Registration_Window" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
+
+
+    <Border CornerRadius="60">
+
+        <Border 
+        CornerRadius="50"
+        BorderThickness="8"
+        Opacity="0.9">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#112161" Offset="0"/>
+                    <GradientStop Color="#012333" Offset="0.75"/>
+                    <GradientStop Color="#112161" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#29366e" Offset="0"/>
+                    <GradientStop Color="#112161" Offset="0.25"/>
+                    <GradientStop Color="#29366e" Offset="0.55"/>
+                    <GradientStop Color="#112161" Offset="0.95"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <TextBlock Text="Registration Window"
+                               Foreground="#db234e"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               FontFamily="montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="35,10,10,0"/>
+
+                    <Button x:Name="btnminimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="DarkGray"
+                            FontSize="16"
+                            FontFamily="montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnminimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#db234e"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#91344a"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                            
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="DarkGray"
+                            FontSize="13"
+                            FontFamily="montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#db234e"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#91344a"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                </Grid>
+
+
+                <StackPanel Width="500"
+                            Grid.Row="2"
+                            Orientation="Vertical"
+                            Margin="275,5,0,0">              
+
+
+
+                    <Grid>
+
+                    
+                        <ListView Name="Itemlist" Margin="10,10,10,5"  Height="195" VerticalAlignment="Top">
+                            <ListView.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Clear" Click="MenuItem_Click"/>
+                                </ContextMenu>
+                            </ListView.ContextMenu>
+
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Reg No" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Address" Width="150" DisplayMemberBinding="{Binding Address}"/>
+                                <GridViewColumn Header="IS3301" Width="50" DisplayMemberBinding="{Binding IS3301}"/>
+                                <GridViewColumn Header="EE3302" Width="50" DisplayMemberBinding="{Binding EE3302}"/>
+                                <GridViewColumn Header="EE3251" Width="50" DisplayMemberBinding="{Binding EE3251}"/>
+                                <GridViewColumn Header="GPA" Width="30" DisplayMemberBinding="{Binding GPA}"/>
+
+                            </GridView>                        
+                           </ListView.View>
+                    </ListView>
+
+                        <CheckBox x:Name="EnableCheckBox" Content="Edit" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+
+                        <Grid x:Name="EditGrid" IsEnabled="{Binding ElementName=EnableCheckBox,Path=IsChecked}" Margin="3,260,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                            <Label Content="Name" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Address" HorizontalAlignment="Left" Margin="3,30,0,0" VerticalAlignment="Top"/>
+                            <Label Content="IS3301" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top"/>
+                            <Label Content="EE3302" HorizontalAlignment="Left" Margin="3,90,0,0" VerticalAlignment="Top"/>
+                            <Label Content="EE3251" HorizontalAlignment="Left" Margin="3,120,0,0" VerticalAlignment="Top"/>
+                            <Label Content="GPA" HorizontalAlignment="Left" Margin="3,150,0,0" VerticalAlignment="Top"/>
+                            <TextBox Name="NameTextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.Name,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,5,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="AddressTextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.Address,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,35,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="MarksIS3301TextBox" HorizontalAlignment="Left" Margin="70,65,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="MarksEE3302TextBox" HorizontalAlignment="Left" Margin="70,95,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="MarksEE3251TextBox" HorizontalAlignment="Left" Margin="70,125,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="GPATextBox" HorizontalAlignment="Left" Margin="70,155,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            
+                        </Grid>
+                        
+
+
+
+                    </Grid>
+
+
+
+
+                
+                </StackPanel>
+                <StackPanel Width="275" 
+                            Grid.Row="1"
+                            Orientation="Vertical"
+                            Margin="0,10,500,0">
+
+                    <Button x:Name="CreateButton" HorizontalAlignment="Center" Click="CreateButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Stretch="Uniform" />
+                            <Label Content="Create"/>
+
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="ReadButton" HorizontalAlignment="Center" Click="ReadButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Stretch="Uniform" />
+                            <Label Content="Read"/>
+
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="UpdateButton" HorizontalAlignment="Center" Click="UpdateButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Stretch="Uniform" />
+                            <Label Content="Update"/>
+
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="DeleteButton" HorizontalAlignment="Center" Click="DeleteButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                        <StackPanel Orientation="Horizontal">
+                            <Path Stretch="Uniform" />
+                            <Label Content="Delete"/>
+
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+
+            </Grid>
+
+
+
+
+        </Border>
+    </Border>
+</Window>
+
+   
