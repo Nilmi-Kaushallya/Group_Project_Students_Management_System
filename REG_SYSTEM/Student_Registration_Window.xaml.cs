@@ -69,6 +69,7 @@ namespace REG_SYSTEM
                         //EE3303= marks_EE3303,
                         //GPA=gpa
                     });
+
                     context.SaveChanges();
 
                 }
