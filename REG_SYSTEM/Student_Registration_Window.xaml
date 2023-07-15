@@ -137,17 +137,17 @@
                 </Grid>
 
 
-                <StackPanel Width="500"
+                <StackPanel Width="575"
                             Grid.Row="2"
                             Orientation="Vertical"
-                            Margin="275,5,0,0">              
+                            Margin="200,25,0,0">              
 
 
 
                     <Grid>
 
                     
-                        <ListView Name="Itemlist" Margin="10,10,10,5"  Height="195" VerticalAlignment="Top">
+                        <ListView Name="Itemlist" Margin="10,10,10,5" Background="MediumPurple" Height="195" VerticalAlignment="Top">
                             <ListView.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Clear" Click="MenuItem_Click"/>
@@ -156,33 +156,33 @@
 
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Header="Reg No" Width="50" DisplayMemberBinding="{Binding Id}"/>
+                                <GridViewColumn Header="Reg_No" Width="50"  DisplayMemberBinding="{Binding Reg_No}"/>
                                 <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
                                 <GridViewColumn Header="Address" Width="150" DisplayMemberBinding="{Binding Address}"/>
-                                <GridViewColumn Header="IS3301" Width="50" DisplayMemberBinding="{Binding IS3301}"/>
+                                <GridViewColumn Header="EE3301" Width="50" DisplayMemberBinding="{Binding EE3301}"/>
                                 <GridViewColumn Header="EE3302" Width="50" DisplayMemberBinding="{Binding EE3302}"/>
-                                <GridViewColumn Header="EE3251" Width="50" DisplayMemberBinding="{Binding EE3251}"/>
+                                <GridViewColumn Header="EE3303" Width="50" DisplayMemberBinding="{Binding EE3303}"/>
                                 <GridViewColumn Header="GPA" Width="30" DisplayMemberBinding="{Binding GPA}"/>
 
                             </GridView>                        
                            </ListView.View>
                     </ListView>
 
-                        <CheckBox x:Name="EnableCheckBox" Content="Edit" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="EnableCheckBox" Content="Edit" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
 
                         <Grid x:Name="EditGrid" IsEnabled="{Binding ElementName=EnableCheckBox,Path=IsChecked}" Margin="3,260,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                            <Label Content="Name" HorizontalAlignment="Left" Margin="3,0,0,0" VerticalAlignment="Top"/>
+                            <Label Content="Name" HorizontalAlignment="Left" Margin="3,0,0,0"  VerticalAlignment="Top"/>
                             <Label Content="Address" HorizontalAlignment="Left" Margin="3,30,0,0" VerticalAlignment="Top"/>
-                            <Label Content="IS3301" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top"/>
+                            <Label Content="EE3301" HorizontalAlignment="Left" Margin="3,60,0,0" VerticalAlignment="Top"/>
                             <Label Content="EE3302" HorizontalAlignment="Left" Margin="3,90,0,0" VerticalAlignment="Top"/>
-                            <Label Content="EE3251" HorizontalAlignment="Left" Margin="3,120,0,0" VerticalAlignment="Top"/>
+                            <Label Content="EE3303" HorizontalAlignment="Left" Margin="3,120,0,0" VerticalAlignment="Top"/>
                             <Label Content="GPA" HorizontalAlignment="Left" Margin="3,150,0,0" VerticalAlignment="Top"/>
-                            <TextBox Name="NameTextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.Name,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,5,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
-                            <TextBox Name="AddressTextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.Address,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,35,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
-                            <TextBox Name="MarksIS3301TextBox" HorizontalAlignment="Left" Margin="70,65,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
-                            <TextBox Name="MarksEE3302TextBox" HorizontalAlignment="Left" Margin="70,95,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
-                            <TextBox Name="MarksEE3251TextBox" HorizontalAlignment="Left" Margin="70,125,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
-                            <TextBox Name="GPATextBox" HorizontalAlignment="Left" Margin="70,155,0,0" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="NameTextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.Name,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,5,0,0" Background="BlanchedAlmond"  Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="AddressTextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.Address,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,35,0,0" Background="BlanchedAlmond" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="EE3301TextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.EE3301,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,65,0,0" Background="BlanchedAlmond" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="EE3302TextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.EE3302,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,95,0,0" Background="BlanchedAlmond" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="EE3303TextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.EE3303,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,125,0,0" Background="BlanchedAlmond" Width="150" Height="15" VerticalAlignment="Top"/>
+                            <TextBox Name="GPATextBox" Text="{Binding ElementName=Itemlist,Path=SelectedItem.GPA,Mode=OneWay}" HorizontalAlignment="Left" Margin="70,155,0,0" Background="BlanchedAlmond" Width="150" Height="15" VerticalAlignment="Top"/>
                             
                         </Grid>
                         
@@ -201,28 +201,36 @@
                             Orientation="Vertical"
                             Margin="0,10,500,0">
 
-                    <Button x:Name="CreateButton" HorizontalAlignment="Center" Click="CreateButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                    <Button Background="CadetBlue"
+                             FontWeight="DemiBold" BorderBrush="LightBlue" BorderThickness="3"
+                        x:Name="CreateButton" HorizontalAlignment="Center" Click="CreateButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
                         <StackPanel Orientation="Horizontal">
                             <Path Stretch="Uniform" />
                             <Label Content="Create"/>
 
                         </StackPanel>
                     </Button>
-                    <Button x:Name="ReadButton" HorizontalAlignment="Center" Click="ReadButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                    <Button Background="CadetBlue"
+                             FontWeight="DemiBold" BorderBrush="LightBlue" BorderThickness="3"
+                        x:Name="ReadButton" HorizontalAlignment="Center" Click="ReadButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
                         <StackPanel Orientation="Horizontal">
                             <Path Stretch="Uniform" />
                             <Label Content="Read"/>
 
                         </StackPanel>
                     </Button>
-                    <Button x:Name="UpdateButton" HorizontalAlignment="Center" Click="UpdateButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                    <Button Background="CadetBlue"
+                             FontWeight="DemiBold" BorderBrush="LightBlue" BorderThickness="3"
+                        x:Name="UpdateButton" HorizontalAlignment="Center" Click="UpdateButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
                         <StackPanel Orientation="Horizontal">
                             <Path Stretch="Uniform" />
                             <Label Content="Update"/>
 
                         </StackPanel>
                     </Button>
-                    <Button x:Name="DeleteButton" HorizontalAlignment="Center" Click="DeleteButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
+                    <Button Background="CadetBlue" 
+                           FontWeight="DemiBold" BorderBrush="LightBlue" BorderThickness="3"
+                        x:Name="DeleteButton" HorizontalAlignment="Center" Click="DeleteButton_Click" Margin="0,30,0,0" VerticalAlignment="Top" Width="70">
                         <StackPanel Orientation="Horizontal">
                             <Path Stretch="Uniform" />
                             <Label Content="Delete"/>

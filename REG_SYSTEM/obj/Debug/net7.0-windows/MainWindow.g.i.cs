@@ -85,7 +85,7 @@ namespace REG_SYSTEM {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/REG_SYSTEM;component/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/REG_SYSTEM;V1.0.0.0;component/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -19,6 +19,8 @@ namespace REG_SYSTEM
     /// </summary>
     public partial class Admin_Window : Window
     {
+        public List<User> DatabaseUsers { get; private set; }
+
         public Admin_Window()
         {
             InitializeComponent();
@@ -43,6 +45,105 @@ namespace REG_SYSTEM
         }
 
 
+        public void Create()
+        {
+            using (UserDataContext context = new UserDataContext())
+            {
+               var name = NameTextBox.Text;
+               var password = PasswordTextBox.Text;
+               
+
+                if (name != null && password!= null)
+                {
+                    context.Users.Add(new User()
+                    {
+                        Name = name,
+                        Password = password
+                                            
+                    });
+                    context.SaveChanges();
+
+                }
+
+
+            }
+
+        }
+
+        public void Read()
+        {
+            using (UserDataContext context = new UserDataContext())
+            {
+                DatabaseUsers = context.Users.ToList();
+                Itemlist.ItemsSource = DatabaseUsers;
+            }
+        }
+
+        public void Update()
+        {
+            using (UserDataContext context = new UserDataContext())
+            {
+                User selectedUser = Itemlist.SelectedItem as User;
+
+                var name = NameTextBox.Text;
+                var password = PasswordTextBox.Text;
+
+                if (name != null && password != null)
+                {
+                    User user = context.Users.Find(selectedUser.Id);
+                    user.Name = name;
+                    user.Password = password;
+
+                    context.SaveChanges();
+                }
+            }
+
+        }
+
+        public void Delete()
+        {
+            using (UserDataContext context = new UserDataContext())
+            {
+                User selectedUser = Itemlist.SelectedItem as User;
+
+                if (selectedUser != null)
+                {
+                   User user = context.Users.Single(x=> x.Id == selectedUser.Id);
+
+                    context.Remove(user);
+                    context.SaveChanges();
+
+                }
+
+
+            }
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Itemlist.Items.Clear();
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Create();
+        }
+
+        private void ReadButton_Click(object sender, RoutedEventArgs e)
+        {
+            Read();
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            Update();
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            Delete();
+
+        }
     }
 }
 

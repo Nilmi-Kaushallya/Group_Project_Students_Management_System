@@ -19,7 +19,10 @@ namespace REG_SYSTEM
         {
             
 
-            DatabaseFacade facade = new DatabaseFacade(new DataContext());
+           // DatabaseFacade facade = new DatabaseFacade(new UserDataContext());
+            //facade.EnsureCreated();
+
+           DatabaseFacade facade = new DatabaseFacade(new UserDataContext());
             facade.EnsureCreated();
         }
 

@@ -1145,11 +1145,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM login screen done\\REG_SYSTEM\\REG_SYSTEM.csproj",
+      "projectUniqueName": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM\\REG_SYSTEM\\REG_SYSTEM.csproj",
       "projectName": "REG_SYSTEM",
-      "projectPath": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM login screen done\\REG_SYSTEM\\REG_SYSTEM.csproj",
+      "projectPath": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM\\REG_SYSTEM\\REG_SYSTEM.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM login screen done\\REG_SYSTEM\\obj\\",
+      "outputPath": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM\\REG_SYSTEM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",

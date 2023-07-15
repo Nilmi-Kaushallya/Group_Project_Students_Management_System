@@ -9,6 +9,8 @@ namespace REG_SYSTEM
         public string Name { get; set; }
 
         public string Password { get; set; }
+       
+
         
 
 

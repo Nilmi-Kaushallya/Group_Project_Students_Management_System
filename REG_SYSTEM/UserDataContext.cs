@@ -16,7 +16,7 @@ namespace REG_SYSTEM
 
 
         public DbSet<User> Users { get; set; }
-
+        public DbSet<Students> Students { get; set; }
 
     }
 }

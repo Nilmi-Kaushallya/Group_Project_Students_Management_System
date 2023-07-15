@@ -46,24 +46,27 @@ namespace REG_SYSTEM
 
         public void Create()
         {
-            using (DataContext context = new DataContext())
+            using (UserDataContext context = new UserDataContext())
             {
                 var name = NameTextBox.Text;
                 var address = AddressTextBox.Text;
-                //var marks_Is3301 = MarksIS3301TextBox.Text;
-                //var marks_EE3302 = MarksEE3302TextBox.Text;
-                //var marks_EE3251 = MarksEE3251TextBox;
-                //var gpa = GPATextBox.Text;
+                //want to change the variable type
+                /*
+                var EE3301 = EE3301TextBox.Text; 
+                var EE3302 = EE3302TextBox.Text;
+                var EE3303 = EE3303TextBox.Text;
+                var gpa = GPATextBox.Text;
+                */
 
-                if (name != null && address != null)
+                if (name != null && address != null)//&& EE3301!=null && EE3302 != null && EE3303 != null && gpa !=null
                 {
-                    context.Users.Add(new Students()
+                    context.Students.Add(new Students()
                     {
                         Name = name,
-                        Address = address,
-                        //Marks_IS3301 = marks_Is3301,
-                        // Marks_EE3302 = marks_EE3302,
-                        // Marks_EE3251=marks_EE3251,
+                        Address = address
+                        //EE3301 = EE3301,
+                        //EE3302 = EE3302,
+                        //EE3303= marks_EE3303,
                         //GPA=gpa
                     });
                     context.SaveChanges();
@@ -77,27 +80,38 @@ namespace REG_SYSTEM
 
         public void Read()
         {
-            using (DataContext context = new DataContext()) 
+            using (UserDataContext context = new UserDataContext()) 
             {
-                DatabaseUsers = context.Users.ToList();
+                DatabaseUsers = context.Students.ToList();
                 Itemlist.ItemsSource = DatabaseUsers;
             }
         }
 
         public void Update()
         {
-            using (DataContext context = new DataContext())
+            using (UserDataContext context = new UserDataContext())
             {
-                Students selectedStudent = Itemlist.SelectedItem as Students;
+                Students selectedStudents = Itemlist.SelectedItem as Students;
 
                 var name = NameTextBox.Text;
                 var address = AddressTextBox.Text;
+                //want to change the name
+                /*
+                var EE3301 = EE3301TextBox.Text;   
+                var EE3302 = EE3302TextBox.Text;
+                var EE3303 = EE3303TextBox.Text;
+                var gpa = GPATextBox.Text;
+                */
 
-                if(name != null && address != null) 
+                if (name != null && address != null)//&& EE3301 != null && EE3302 != null && EE3303 != null && gpa != null
                 {
-                    Students students = context.Users.Find(selectedStudent.Reg_No);
-                    students.Name = name;
-                    students.Address = address;
+                    Students Student = context.Students.Find(selectedStudents.Reg_No);
+                    Student.Name = name;
+                    Student.Address = address;
+                    //Students.EE3301 = EE3301;
+                    //Students.EE3302 = EE3302TextBox.Text;
+                    //Students.EE3303 = EE3303TextBox.Text;
+                    //Students.GPA = GPATextBox.Text;
 
                     context.SaveChanges();
                 }
@@ -107,15 +121,15 @@ namespace REG_SYSTEM
 
         public void Delete()
         {
-            using (DataContext context = new DataContext())
+            using (UserDataContext context = new UserDataContext())
             {
-                Students selectedStudent = Itemlist.SelectedItem as Students;
+                Students selectedStudents = Itemlist.SelectedItem as Students;
 
-                if(selectedStudent != null) 
+                if(selectedStudents != null) 
                 {
-                    Students students = context.Users.Single(x=> x.Reg_No == selectedStudent.Reg_No);
+                    Students Students = context.Students.Single(x=> x.Reg_No == selectedStudents.Reg_No);
 
-                    context.Remove(students);
+                    context.Remove(Students);
                     context.SaveChanges();
 
                 }

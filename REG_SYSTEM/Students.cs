@@ -5,13 +5,13 @@ namespace REG_SYSTEM
     public class Students
     {
         [Key]
-        public string Reg_No { get; set; }
+        public int Reg_No { get; set; }
         public string Name { get; set;}
         public string Address { get; set;}
-        public int Marks_IS3301 { get; set;}
-        public int Marks_EE3302 { get; set; }
-        public int Marks_EE3251 { get; set; }
-        public int GPA { get; set; }
+        public string EE3301 { get; set;}
+        public string EE3302 { get; set; }
+        public string EE3303 { get; set; }
+        public string GPA { get; set; }
 
     }
 }

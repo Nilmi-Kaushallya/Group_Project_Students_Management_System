@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d2duKWXzVn0OBu6Grid++zQbQoFZ9QMO7LczJoU19kqHVPDVASZHx9J6rVlCU8Qm5KuYQ7byI2zuX45Xz76OOQ==",
+  "dgSpecHash": "7xLjR3SffZAuEweqgNkKzmEnTAQsNZfrj4sWTWkp8sZ1nEUFMdhCO+Lb9Zhc+gp7meVGmroMAidrIUlyfIJfZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM login screen done\\REG_SYSTEM\\REG_SYSTEM.csproj",
+  "projectFilePath": "C:\\Users\\Asus\\OneDrive\\Desktop\\REG_SYSTEM\\REG_SYSTEM\\REG_SYSTEM.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.5\\microsoft.data.sqlite.core.7.0.5.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.5\\microsoft.entityframeworkcore.7.0.5.nupkg.sha512",
